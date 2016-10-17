@@ -77,7 +77,7 @@ class Grid extends Component {
    jsonData.forEach(data => {
       const _columns = [];
       let check = filter ? false : true;
-      let isSelected = _.find(selected, function(e) {return e["_id"] === data["_id"]})
+      let isSelected = selected["_id"] === data["_id"]
       columns.forEach(c => {
         _columns.push(<TableRowColumn key={data["_id"] + " " + c}>{data[c]}</TableRowColumn>);
         if (!check && data[c] && data[c].toLowerCase().indexOf(filter.toLowerCase()) !== -1) {

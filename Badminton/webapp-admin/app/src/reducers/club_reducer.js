@@ -1,28 +1,25 @@
 
 import { 
-  ADD_CLUB, ADD_CLUB_SUCCESS, ADD_CLUB_FAILURE,
+  UPDATE_CLUB, UPDATE_CLUB_SUCCESS, UPDATE_CLUB_FAILURE,
   GET_CLUBS, GET_CLUBS_SUCCESS, GET_CLUBS_FAILURE,
   DELETE_CLUBS, DELETE_CLUBS_SUCCESS, DELETE_CLUBS_FAILURE,
-  RESET_NEW_CLUB, UPDATE_NEW_CLUB
+ // SELECT_CLUB_TO_EDIT, EDIT_CLUB_SUCCESS, EDIT_CLUB, EDIT_CLUB_FAILURE,
+  CREATE_NEW_CLUB, UPDATE_FIELD,
+  GET_CLUB
 } from '../actions/clubs';
 
 import uuid from 'uuid';
 import newClubForm from '_forms/addclub.form.json';
 import _ from 'lodash'
 
-const INITIAL_STATE = {clubs:[], status: null, error: null, loading: false, newClub: Object.assign({uuid: uuid.v1()}, _.cloneDeep(newClubForm))};
-
-
-/*
- if (errors && errors[key]) {
-        switch (errors[key].kind) {
-          case "required":
-            return "Ce Champ est requis";
-          default:
-            return "Merci de renseigner une valeur correcte";
-        }
-      }
-*/
+const INITIAL_STATE = {
+  clubs:[], 
+  status: null, 
+  error: null, 
+  loading: false,
+  jsonForm: Object.assign({}, _.cloneDeep(newClubForm)),
+  current: Object.assign({}, {_id: uuid.v1(), isNew: true})
+};
 
 export default function(state = INITIAL_STATE, action) {
   let error;
@@ -39,35 +36,21 @@ export default function(state = INITIAL_STATE, action) {
     case GET_CLUBS_FAILURE:
       return { ...state, error:"an error occured", loading: false};
 
-    case ADD_CLUB:
+    case UPDATE_CLUB:
       return { ...state, error:null, loading: true};
-    case ADD_CLUB_FAILURE:
-      var properties = state.newClub.schema.properties;
+    case UPDATE_CLUB_FAILURE:
       var errors = action.payload.data.error.errors;
-      for (let key of Object.keys(errors)) {
-        if (properties[key]) {
-          properties[key].error = errors[key];
-        }
-      }
-      return {
-        ...state,
-        error:action.payload.data.error,
-        newClub: {
-          ...state.newClub,
-          schema: {
-            ...state.newClub.schema,
-            properties: properties
-          }
-        },
-        loading: false
-      };
-    case ADD_CLUB_SUCCESS:
-      return { ...state, clubs:[...state.clubs, action.payload], error:null, loading: false, newClub: Object.assign({uuid: uuid.v1()}, _.cloneDeep(newClubForm))};
-    case RESET_NEW_CLUB:
-      return {  ...state, newClub: Object.assign({uuid: uuid.v1()}, _.cloneDeep(newClubForm))};
-    case UPDATE_NEW_CLUB:
-      state.newClub.schema.properties[action.key].value = action.value;
-     return {...state};
+      return { ...state, error:action.payload.data.error, loading: false };
+    case UPDATE_CLUB_SUCCESS:
+      return { ...state, clubs:[...state.clubs, action.payload], error:null, loading: false, current: Object.assign({}, {_id: uuid.v1(), isNew: true})};
+    case CREATE_NEW_CLUB:
+      return {  ...state, current: Object.assign({}, {_id: uuid.v1(), isNew: true})};
+
+
+    case UPDATE_FIELD:
+      var _club = state.current;
+      _club[action.key] = action.value;
+     return {...state, current: _club, error:null};
 
     case DELETE_CLUBS:
       return { ...state, error:null, loading: true};
@@ -75,6 +58,9 @@ export default function(state = INITIAL_STATE, action) {
       return { ...state, error:action.payload.data.error, loading: false};
     case DELETE_CLUBS_SUCCESS:
       return { ...state, clubs:[...state.clubs], error:null, loading: false};
+
+    case GET_CLUB:
+      return {...state, current: action.club,  error:null}
 
     default:
     return state;

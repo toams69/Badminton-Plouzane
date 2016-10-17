@@ -1,8 +1,8 @@
 import axios from 'axios'; 
 
-export const ADD_CLUB = 'ADD_CLUB';
-export const ADD_CLUB_SUCCESS = 'ADD_CLUB_SUCCESS';
-export const ADD_CLUB_FAILURE = 'ADD_CLUB_FAILURE';
+export const UPDATE_CLUB = 'UPDATE_CLUB';
+export const UPDATE_CLUB_SUCCESS = 'UPDATE_CLUB_SUCCESS';
+export const UPDATE_CLUB_FAILURE = 'UPDATE_CLUB_FAILURE';
 
 export const DELETE_CLUB = 'DELETE_CLUB';
 export const DELETE_CLUB_SUCCESS = 'DELETE_CLUB_SUCCESS';
@@ -12,8 +12,16 @@ export const GET_CLUBS = 'GET_CLUBS';
 export const GET_CLUBS_SUCCESS = 'GET_CLUBS_SUCCESS';
 export const GET_CLUBS_FAILURE = 'GET_CLUBS_FAILURE';
 
-export const RESET_NEW_CLUB = 'RESET_NEW_CLUB';
-export const UPDATE_NEW_CLUB = "UPDATE_NEW_CLUB";
+export const CREATE_NEW_CLUB = 'CREATE_NEW_CLUB';
+export const UPDATE_FIELD = "UPDATE_FIELD";
+
+
+export const SELECT_CLUB_TO_EDIT = 'SELECT_CLUB_TO_EDIT';
+export const EDIT_CLUB = 'EDIT_CLUB';
+export const EDIT_CLUB_SUCCESS = 'EDIT_CLUB_SUCCESS';
+export const EDIT_CLUB_FAILURE = 'EDIT_CLUB_FAILURE';
+
+export const GET_CLUB = 'GET_CLUB';
 
 const ROOT_URL = 'http://localhost:3002/api';
 
@@ -32,30 +40,33 @@ export function getAllClubsSuccess(clubs) {
   };
 }
 
+export function updateClub(club) {
+  let request = null;
+  if (club.isNew) {
+    request = axios.post(`${ROOT_URL}/clubs`, club);
+  } else {
 
-export function addClub(values) {
-  const request = axios.post(`${ROOT_URL}/clubs`, values);
+    request = axios.post(`${ROOT_URL}/clubs`+"/"+club["_id"], {"operation": "update", "club": club});
+  }
   return {
-    type: ADD_CLUB,
+    type: UPDATE_CLUB,
     payload: request
   };
 }
 
-export function addClubSuccess(club) {
+export function updateClubSuccess(club) {
   return {
-    type: ADD_CLUB_SUCCESS,
+    type: UPDATE_CLUB_SUCCESS,
     payload: club
   };
 }
 
-export function addClubFailure(error) {
+export function updateClubFailure(error) {
   return {
-    type: ADD_CLUB_FAILURE,
+    type: UPDATE_CLUB_FAILURE,
     payload: error
   };
 }
-
-
 
 export function deleteClub(id) {
   const request = axios.post(`${ROOT_URL}/clubs/`+id, {"operation": "delete"});
@@ -78,15 +89,23 @@ export function deleteClubFailure(error) {
   };
 }
 
-export function resetNewClub() {
+export function createNewClub() {
   return {
-    type: RESET_NEW_CLUB
+    type: CREATE_NEW_CLUB
   };
 }
 
-export function updateNewClub(property, key, value) {
+export function updateField(key, value) {
   return {
-    type: UPDATE_NEW_CLUB,
-    property: property, key: key, value: value
+    type: UPDATE_FIELD,
+    key: key,
+    value: value
+  };
+}
+
+export function getClub(club) {
+   return {
+    type: GET_CLUB,
+    club: club
   };
 }

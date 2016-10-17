@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import Club from '_components/Admin/Club.js';
 
 import {getAllClubs, getAllClubsSuccess,
-addClub, addClubSuccess, addClubFailure,
+updateClub, updateClubSuccess, updateClubFailure,
 deleteClub, deleteClubSuccess, deleteClubFailure,
-resetNewClub, updateNewClub
+createNewClub, updateField, getClub
  } from '_actions/clubs';
 
 import JsonForm from '_components/JsonForm';
@@ -27,16 +27,16 @@ const mapDispatchToProps = (dispatch) => {
       });
     },
 
-    addClub: (values) => {
+    updateClub: (club) => {
       return new Promise((resolve, reject) => {
-       dispatch(addClub(values))
+       dispatch(updateClub(club))
         .then((response) => {
             let data = response.payload.data;
             if(response.payload.status != 200) {
-               dispatch(addClubFailure(response.payload));
+               dispatch(updateClubFailure(response.payload));
                reject();
              } else {
-              dispatch(addClubSuccess(data.club)); 
+              dispatch(updateClubSuccess(data.club)); 
               resolve();
             }
           }
@@ -62,11 +62,15 @@ const mapDispatchToProps = (dispatch) => {
     },
 
     resetClub: () => {
-      dispatch(resetNewClub()); 
+      dispatch(createNewClub()); 
     },
 
-    updateClub: (property, key, value) => {
-      dispatch(updateNewClub(property, key, value));
+    getClub: (club) => {
+      dispatch(getClub(club));
+    },
+
+    updateField: (key, value) => {
+      dispatch(updateField(key, value));
     }
   }
 }
@@ -75,7 +79,8 @@ const mapStateToProps = (state) => {
   return { 
     clubs: state.clubs.clubs,
     error: state.clubs.error,
-    newClub: state.clubs.newClub,
+    current: state.clubs.current,
+    jsonForm: state.clubs.jsonForm
   };
 }
 

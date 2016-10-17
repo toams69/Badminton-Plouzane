@@ -61,8 +61,23 @@ module.exports = function(router) {
           return res.status(500).json({
             error: err
           });
-        }
-        res.json({statusCode: 0});
+         }
+         res.json({statusCode: 0});
+        });
+    } else if (body.operation === "update") {
+      Clubs.findById(id, function(err, club) {
+        if (err)
+          res.send(err);
+        club.nom= body.club.nom;
+        club.ville= body.club.ville;
+        club.responsable= body.club.responsable;
+        club.email= body.club.email;
+        club.telephone= body.club.telephone;
+        club.save(function(err) {
+          if (err)
+           res.send(err);
+          res.json({statusCode: 0, "club": club});
+        });
       });
     } else {
       return res.status(500).json({

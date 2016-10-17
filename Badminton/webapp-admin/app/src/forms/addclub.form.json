@@ -1,20 +1,8 @@
 {
-  "formId": "addClub",
+  "formId": "club",
   "version": 1,
-  "actions": [
-   {
-      "type": "submit",
-      "name": "addClub",
-      "title": "Ajouter Club"
-    },
-    {
-      "type": "reset",
-      "title": "Annuler"
-    }
-  ],
   "schema": {
     "type": "object",
-    "title": "Ajouter un club",
     "required": ["nom", "ville"],
     "properties": {
       "nom": {
