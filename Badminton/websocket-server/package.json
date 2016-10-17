@@ -1,0 +1,23 @@
+{
+  "name": "bestSpot4Me-Server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/server"
+  },
+  "engines": {
+    "node": "5.9.0",
+    "npm": "3.7.3"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.6",
+    "mongoose-timestamp": "^0.5.0",
+    "pug": "^2.0.0-beta2",
+    "socket.io": "^1.4.6",
+    "socketio-jwt": "^4.3.4"
+  }
+}
+

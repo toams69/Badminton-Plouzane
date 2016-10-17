@@ -1,0 +1,33 @@
+{
+  "name": "bestSpot4Me-API-Server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/bin/www"
+  },
+  "engines": {
+    "node": "5.9.0",
+    "npm": "3.7.3"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "encodeurl": "1.0.1",
+    "express": "~4.13.1",
+    "express-jwt": "^3.3.0",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^5.7.0",
+    "lodash": "^3.10.1",
+    "mongo-express": "*",
+    "mongoose": "*",
+    "mongoose-timestamp": "*",
+    "morgan": "~1.6.1",
+    "sendgrid": "2.0.0",
+    "cookies": "*",
+    "serve-favicon": "~2.3.0",
+    "mongoosify": "*"
+  }
+}

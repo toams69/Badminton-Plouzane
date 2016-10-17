@@ -1,0 +1,45 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/tools/liquidprompt/liquidprompt
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+alias ll="ls -lhA"
+alias ps="ps auxf"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias mkdir="mkdir -pv"
+alias wget="wget -c"
+
+export PROJECT_ROOT=/vagrant/Badminton
+
+if [ -f $HOME/.bash_aliases ]
+then
+      . $HOME/.bash_aliases
+fi
+
+project() {
+	cd $PROJECT_ROOT
+}
+
+up() {
+	project && docker-compose up -d && cd -
+}
+
+down() {
+	project && docker-compose down && cd -
+}
+restart_api() {
+	project && docker-compose restart rest-api && cd -
+}
+
+logs_api() {
+	project && docker-compose logs -f rest-api
+}
+

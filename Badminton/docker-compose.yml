@@ -1,0 +1,149 @@
+##################################################################################
+## 
+## VERSION      :   0.0.1
+## DATE         :   10/10/2016
+## AUTHOR       :   Thomas Pariaud
+## DESCRIPTION  :   ""
+##
+##################################################################################
+
+version: '2'
+services:
+
+  probe:
+    image: weaveworks/scope:0.17.1
+    network_mode: "host"
+    pid: "host"
+    privileged: true
+    labels:
+      - "works.weave.role=system"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:rw"
+    command:
+      - "--probe.docker"
+      - "true"
+
+  dbdata:
+    image: mongo
+    volumes:
+      - "/data/db:/data/db"
+    command: --break-mongo
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes_from:
+      - dbdata
+    command: --smallfiles --rest
+
+  websocket-server:
+    build: ./websocket-server/
+    container_name: websocketServer
+    volumes:
+      - ./websocket-server/src:/src
+      - ./websocket-server/package.json:/package.json
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - DB=badminton
+      - DB_HOST=db
+      - DB_PORT=27017
+      - DB_URL=mongodb://db:27017/badminton
+      - DB_USERNAME=admin
+      - DB_PASSWORD=admin
+      - JWT_TOKEN=ILoveReactJS
+    links:
+      - db
+
+  rest-api:
+    build: ./api-server/
+    container_name: apiServer
+    volumes:
+      - ./api-server/src:/src
+      - ./api-server/package.json:/package.json
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - DB=badminton
+      - DB_HOST=db
+      - DB_PORT=27017
+      - DB_URL=mongodb://db:27017/badminton
+      - DB_USERNAME=admin
+      - DB_PASSWORD=admin
+      - JWT_TOKEN=ILoveReactJS
+    links:
+      - db
+
+  # webapp:
+  #   build: ./client/web/
+  #   container_name: webapp
+  #   volumes:
+  #     - ./client/web/app:/app
+  #     - ./client/web/package.json:/package.json
+  #     - ./client/common:/common
+  #   ports:
+  #     - "8080:8080"
+  #   links:
+  #     - rest-api
+  #   environment:
+  #     - PORT=8080
+
+  # webapp-prod:
+  #   build: ./client/web/
+  #   container_name: webapp-prod
+  #   volumes:
+  #     - ./client/web/app:/app
+  #     - ./client/web/package.json:/package.json
+  #     - ./client/common:/common
+  #   ports:
+  #     - "8083:8083"
+  #   links:
+  #     - rest-api
+  #   environment:
+  #     - PORT=8083
+  #     - NODE_ENV=production
+  
+  webapp-admin:
+    build: ./webapp-admin/
+    container_name: webapp-admin
+    volumes:
+      - ./webapp-admin/app:/app
+      - ./webapp-admin/package.json:/package.json
+    ports:
+      - "3005:3005"
+    depends_on:
+      - rest-api
+    links:
+      - db
+    environment:
+      - PORT=3005
+      - DB=badminton
+      - DB_HOST=db
+      - DB_PORT=27017
+      - DB_URL=mongodb://db:27017/badminton
+      - DB_USERNAME=admin
+      - DB_PASSWORD=admin
+
+  # nginx:
+  #   image: nginx:1.10.1
+  #   container_name: nginx
+  #   depends_on:
+  #     # - webapp
+  #     # - webapp-prod
+  #     - rest-api
+  #     - webapp-admin
+  #   volumes:
+  #     - ./nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
+  #   ports:
+  #     - "80:80"
+  #   environment:
+  #     - NGINX_HOST=nginx
+  #     - NGINX_PORT=80
+  #     #- WEBAPP_DEV=http://webapp:3000/
+  #     - WEBAPP_ADMIN=http://webapp-admin:3005/
+  #     #- WEBAPP_PROD=http://webapp-prod:3003/
+  #     - API_SERVER=http://rest-api:3002/api
+  #   command: /bin/bash -c "envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"

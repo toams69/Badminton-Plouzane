@@ -1,0 +1,52 @@
+{
+  "formId": "addClub",
+  "version": 1,
+  "actions": [
+   {
+      "type": "submit",
+      "name": "addClub",
+      "title": "Ajouter Club"
+    },
+    {
+      "type": "reset",
+      "title": "Annuler"
+    }
+  ],
+  "schema": {
+    "type": "object",
+    "title": "Ajouter un club",
+    "required": ["nom", "ville"],
+    "properties": {
+      "nom": {
+        "title": "Nom du club",
+        "type": "string"
+      },
+      "ville": {
+        "title": "Ville du club",
+        "type": "string"
+      },
+      "responsable": {
+        "title": "Responsable du club",
+        "type": "string"
+      },
+      "email": {
+        "title": "Email de contact",
+        "type": "string",
+        "format": "email"
+      },
+      "telephone": {
+        "title": "Telephone de contact",
+        "type": "string",
+        "format": "phoneNumber"
+      }
+    }
+  },
+  "form": [
+    {
+      "key": "nom",
+      "validationMessage": {
+        "302": "This field is like, uh, required?"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile      on;
+    keepalive_timeout  65;
+
+    server {
+        listen       ${NGINX_PORT};
+        server_name  ${NGINX_HOST};
+
+		# allow underscores in headers. Useful ?
+		underscores_in_headers on;
+
+		######################################
+        # /api goes to api-server
+		######################################
+		location /api {
+			proxy_pass ${API_SERVER};
+		}
+
+		######################################
+		# /admin goes to webapp admin
+		######################################
+		location /admin {
+			proxy_pass ${WEBAPP_ADMIN};
+		}
+
+		######################################
+        # /prod goes to webapp-prod
+		######################################
+		#location /prod {
+		#	proxy_pass  ${WEBAPP_PROD};
+		#}
+
+		######################################
+		# everything else goes to client
+		######################################
+		#location / {
+		#	proxy_pass  ${WEBAPP_DEV};
+		#}
+
+		location / {
+			proxy_pass  http://webapp-admin:3005/;
+		}
+    }
+}
