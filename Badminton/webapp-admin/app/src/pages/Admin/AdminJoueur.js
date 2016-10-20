@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import HeaderContainer from '_containers/HeaderContainer.js';
-import DrawerContainer from '_containers/DrawerContainer.js';
-import Drawer from 'material-ui/Drawer';
+import PlayerContainer from '_containers/Admin/PlayerContainer.js';
 
 const styles = {
   drawer: {
@@ -11,17 +9,9 @@ const styles = {
 
 class AdminJoueur extends Component {
 
-  componentDidMount() {
-    this.setState({open: false });
-  }
-
-  handleToggle = () => this.setState({open: !(this.state && this.state.open)});
-
   render() {
     return (
-      <div>
-        coucou
-      </div>
+      <PlayerContainer />
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Club from '_components/Admin/Player.js';
+import Player from '_components/Admin/Player.js';
 
 import {getAllPlayers, getAllPlayersSuccess,
 updatePlayer, updatePlayerSuccess, updatePlayerFailure,

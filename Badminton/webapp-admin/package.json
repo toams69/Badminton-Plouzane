@@ -25,6 +25,8 @@
   },
  
   "dependencies": {
+    "intl-locales-supported": "*",
+    "intl": "*",
     "assets-webpack-plugin": "*",
     "mongo-express": "*",
     "async": "^1.5.2",

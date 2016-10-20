@@ -23,20 +23,20 @@ const styles = {
 	}
 };
 
-export default class Joueur extends Component {
+export default class Player extends Component {
 	state = {
 		open: false
 	}
 
 	componentWillMount() {
-		this.props.getAllClubs();
+		this.props.getAllPlayers();
 	}
 
 
-	onClubSelected(clubs) {
+	onPlayerSelected(players) {
 		setTimeout(function() {
-			if (!this.state.open && clubs && clubs.length) {
-				this.props.getClub(clubs[0]);
+			if (!this.state.open && players && players.length) {
+				this.props.getPlayer(players[0]);
 			}
 		}.bind(this), 100);
 	}
@@ -47,7 +47,7 @@ export default class Joueur extends Component {
 	}
 
 	onAddClicked(e) {
-		this.props.resetClub();
+		this.props.resetPlayer();
 		this.setState({"showAdd": true});
 	}
 
@@ -61,14 +61,14 @@ export default class Joueur extends Component {
 	};
 
 	onResetClicked() {
-		this.props.resetClub();
+		this.props.resetPlayer();
 		this.setState({"showAdd": false, "showEdit": false});
 	}
 
-	deleteClub() {
+	deletePlayer() {
 		if (this.props.current && !this.props.current.isNew) {
-			this.props.deleteClub(this.props.current["_id"]).then(() => {
-				this.props.getAllClubs();
+			this.props.deletePlayer(this.props.current["_id"]).then(() => {
+				this.props.getAllPlayers();
 				this.setState({open: false});
 			}, (error) => {
 				this.setState({open: false, "showAdd": false, "showEdit": false});
@@ -76,14 +76,14 @@ export default class Joueur extends Component {
 		}
 	}
 
-	updateClub() {
-		this.props.updateClub(this.props.current).then(() => {
+	updatePlayer() {
+		this.props.updatePlayer(this.props.current).then(() => {
 			this.setState({open: false, "showAdd": false, "showEdit": false});
 		});
 	}
 
 	render() {
-		const {clubs, error, current, jsonForm} = this.props;
+		const {players, error, current, jsonForm} = this.props;
 		let actions = [];
 
 		const dialog_actions = [
@@ -94,7 +94,7 @@ export default class Joueur extends Component {
 			<RaisedButton
 				label="Confirmer"
 				primary={true}
-				onTouchTap={this.deleteClub.bind(this)}
+				onTouchTap={this.deletePlayer.bind(this)}
 			/>,
 		];
 
@@ -126,7 +126,7 @@ export default class Joueur extends Component {
 
 		return (
 			<div style={styles.container}>
-				<Grid jsonData={clubs} onRowSelection={this.onClubSelected.bind(this)} selected={current}/>
+				<Grid jsonData={players} onRowSelection={this.onPlayerSelected.bind(this)} selected={current}/>
 				<br/>
 				<div>{
 					!this.state.showAdd ? actions : null
@@ -136,7 +136,7 @@ export default class Joueur extends Component {
 				{
 					this.state.showAdd || this.state.showEdit ?
 					<JsonForm jsonForm={jsonForm} current={current} style={styles.form} 
-						submitAction={this.updateClub.bind(this)}
+						submitAction={this.updatePlayer.bind(this)}
 						title= {this.state.showAdd ? "Ajouter un joueur" : "Edition d'un joueur"}
 						resetAction={this.onResetClicked.bind(this)}
 						errors={error ? error.errors : null}
@@ -145,7 +145,7 @@ export default class Joueur extends Component {
 				}
 				</div>
 				<Dialog
-					title="Suppression de club"
+					title="Suppression de joueur"
 					actions={dialog_actions}
 					modal={false}
 					open={this.state.open}

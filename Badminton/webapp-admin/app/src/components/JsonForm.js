@@ -2,6 +2,22 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router';
 import {TextField, RaisedButton}from 'material-ui';
+import DatePicker from 'material-ui/DatePicker';
+import areIntlLocalesSupported from 'intl-locales-supported';
+
+let DateTimeFormat;
+
+/**
+ * Use the native Intl.DateTimeFormat if available, or a polyfill if not.
+ */
+if (areIntlLocalesSupported(['fr'])) {
+  DateTimeFormat = global.Intl.DateTimeFormat;
+} else {
+  const IntlPolyfill = require('intl');
+  DateTimeFormat = IntlPolyfill.DateTimeFormat;
+  require('intl/locale-data/jsonp/fr');
+}
+
 
 const styles = {
   button: {
@@ -33,6 +49,19 @@ export default class JsonForm extends Component {
       error = this.getErrorforField(key);
      switch(property.type) {
       case "string":
+        if (property.format === "date") {
+          return (
+            <DatePicker
+              key={this.props.current._id + key}
+              floatingLabelText={property.title}
+              DateTimeFormat={DateTimeFormat}
+              okLabel="OK"
+              cancelLabel="Annuler"
+              locale="fr"
+              onChange={this._handleTextFieldChange.bind(this, key)}
+            />
+          )
+        } else 
         return (<TextField
                   key={this.props.current._id + key}
                   hintText=""
