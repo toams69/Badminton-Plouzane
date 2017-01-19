@@ -1,0 +1,4 @@
+{"_id":{ "$oid": "5880c7228932bf001be2d6ae" },"_team1Id":{ "$oid": "581d014584d054001b20a8e2" },"_team2Id":{ "$oid": "581d012b84d054001b20a8e1" },"date":"2016-11-27T23:00:00.000Z","__v":0,"resultatTeam1":4,"resultatTeam2":4}
+{"_id":{ "$oid": "5880c8c38932bf001be2d6bc" },"_team1Id":{ "$oid": "581cff8484d054001b20a8cc" },"_team2Id":{ "$oid": "581d01c084d054001b20a8e5" },"date":"2017-01-08T23:00:00.000Z","__v":0,"resultatTeam1":2,"resultatTeam2":6}
+{"_id":{ "$oid": "5880ca3f8932bf001be2d6c7" },"_team1Id":{ "$oid": "581cff8484d054001b20a8cc" },"_team2Id":{ "$oid": "581d01b184d054001b20a8e4" },"date":"2016-12-11T23:00:00.000Z","__v":0,"resultatTeam1":8,"resultatTeam2":0}
+{"_id":{ "$oid": "5880cd9b8932bf001be2d6d2" },"_team1Id":{ "$oid": "581d014584d054001b20a8e2" },"_team2Id":{ "$oid": "581cff8484d054001b20a8cc" },"date":"2016-12-14T23:00:00.000Z","__v":0,"resultatTeam1":7,"resultatTeam2":1}
