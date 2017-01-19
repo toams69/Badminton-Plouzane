@@ -21,9 +21,9 @@ class Header extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-   
+
   }
-  
+
 	render() {
       return (
           <div>
@@ -38,7 +38,8 @@ class Header extends Component {
             <List>
               <ListItem primaryText="Joueurs" rightIcon={<ActionInfo />} onTouchTap={this._onListItemSelected.bind(this, "/admin/joueurs")}/>
               <ListItem primaryText="Clubs" rightIcon={<ActionInfo />} onTouchTap={this._onListItemSelected.bind(this, "/admin/clubs")}/>
-              <ListItem primaryText="Match" rightIcon={<ActionInfo />} onTouchTap={this._onListItemSelected.bind(this, "/admin/match")}/>
+              <ListItem primaryText="Equipes" rightIcon={<ActionInfo />} onTouchTap={this._onListItemSelected.bind(this, "/admin/equipes")}/>
+              <ListItem primaryText="Match" rightIcon={<ActionInfo />} onTouchTap={this._onListItemSelected.bind(this, "/admin/rencontre")}/>
             </List>
           </div>
       );

@@ -4,6 +4,8 @@
     <title>Badminton - Admin</title>
     <link rel="stylesheet" href="./style/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./assets/roboto.css" rel="stylesheet">
+    <link href="./assets/icon.css" rel="stylesheet">
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
@@ -26,5 +28,20 @@
       s.parentNode.insertBefore(wf, s);
     })();
   </script>
+
+  <script>
+    var WebFontConfig = {
+      google: { families: [ 'Roboto:400,300,500:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = './assets/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+
   <script src="./bundle.js"></script>
 </html>

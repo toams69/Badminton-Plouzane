@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = express.Router();
+var debug = require('debug')('webapp-admin:server');
 
 var app = express();
+
+
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -17,36 +20,20 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 
 var Wconfig   = null;
 var compiler  = null;
-
-if (process.env.NODE_ENV !== "production") {
-  console.log("dev mode");
-  Wconfig   = require("./webpack.config.dev");
-  compiler  = webpack(Wconfig);
-  app.use(webpackDevMiddleware(compiler, {
-    compress: true,
-    hot: true,
-    inline: true,
-    stats: {
-      colors: true,
-      hash: true,
-      timings: true,
-      chunks: false
-    }
-  }));
-  app.use(webpackHotMiddleware(compiler));
-} else {
-  Wconfig   = require("./webpack.config");
-  compiler  = webpack(Wconfig);
-  console.log("production mode");
-  app.use(webpackDevMiddleware(compiler, {
-    stats: {
-      colors: true,
-      hash: true,
-      timings: true,
-      chunks: false
-    }
-  }));
-}
+Wconfig   = require("./webpack.config.dev");
+compiler  = webpack(Wconfig);
+app.use(webpackDevMiddleware(compiler, {
+  compress: true,
+  hot: true,
+  inline: true,
+  stats: {
+    colors: true,
+    hash: true,
+    timings: true,
+    chunks: false
+  }
+}));
+app.use(webpackHotMiddleware(compiler));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -59,23 +46,16 @@ app.use(function(req, res, next) {
   next();
 });
 
-var staticPath = __dirname;
-if (process.env.NODE_ENV !== "production") {
-  app.use(logger('dev'));
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: false }));
-  app.use(cookieParser());
 
-  app.use(express.static(staticPath));
-  app.use('/', express.static(staticPath));
-  app.use('/new/*', express.static(staticPath));
-  app.use('/validateEmail/*', express.static(staticPath));
-} else {
-  app.use(express.static(staticPath));
-  app.use('/', express.static(staticPath));
-  app.use('/new/*', express.static(staticPath));
-  app.use('/validateEmail/*', express.static(staticPath));
-}
+
+var staticPath = __dirname;
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(express.static(staticPath));
+app.use('/', express.static(staticPath));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

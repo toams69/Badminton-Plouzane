@@ -3,15 +3,34 @@ import { connect } from 'react-redux';
 import Player from '_components/Admin/Player.js';
 
 import {getAllPlayers, getAllPlayersSuccess,
+updatePlayerClub,
 updatePlayer, updatePlayerSuccess, updatePlayerFailure,
 deletePlayer, deletePlayerSuccess, deletePlayerFailure,
 createNewPlayer, updateField, getPlayer
  } from '_actions/players';
 
+import {getAllClubs, getAllClubsSuccess, getClub
+} from '_actions/clubs';
+
 import JsonForm from '_components/JsonForm';
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    getAllClubs: () => {
+      return new Promise((resolve, reject) => {
+       dispatch(getAllClubs())
+        .then((response) => {
+            let data = response.payload.data;
+            if(response.payload.status != 200) {
+              // //let other components know of error by updating the redux` state
+              // dispatch(signInUserFailure(response.payload));
+             } else {
+              dispatch(getAllClubsSuccess(response.payload));
+            }
+        });
+      });
+    },
+
     getAllPlayers: () => {
       return new Promise((resolve, reject) => {
        dispatch(getAllPlayers())
@@ -21,13 +40,13 @@ const mapDispatchToProps = (dispatch) => {
               // //let other components know of error by updating the redux` state
               // dispatch(signInUserFailure(response.payload));
              } else {
-              dispatch(getAllPlayersSuccess(response.payload)); 
+              dispatch(getAllPlayersSuccess(response.payload));
             }
         });
       });
     },
 
-    updatePlayer: (player) => {
+    updatePlayer: (player, club) => {
       return new Promise((resolve, reject) => {
        dispatch(updatePlayer(player))
         .then((response) => {
@@ -36,8 +55,15 @@ const mapDispatchToProps = (dispatch) => {
                dispatch(updatePlayerFailure(response.payload));
                reject();
              } else {
-              dispatch(updatePlayerSuccess(data.player)); 
-              resolve();
+               if (club) {
+                  dispatch(updatePlayerClub(data.player["_id"], club, 2016)).then((r) => {
+                    dispatch(updatePlayerSuccess(data.player));
+                    resolve();
+                  });
+                } else {
+                  dispatch(updatePlayerSuccess(data.player));
+                  resolve();
+                }
             }
           }
         );
@@ -53,7 +79,7 @@ const mapDispatchToProps = (dispatch) => {
                dispatch(deletePlayerFailure(response.payload));
                reject();
              } else {
-              dispatch(deletePlayerSuccess()); 
+              dispatch(deletePlayerSuccess());
               resolve();
             }
           }
@@ -62,7 +88,7 @@ const mapDispatchToProps = (dispatch) => {
     },
 
     resetPlayer: () => {
-      dispatch(createNewPlayer()); 
+      dispatch(createNewPlayer());
     },
 
     getPlayer: (player) => {
@@ -76,7 +102,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
-  return { 
+  return {
+    clubs: state.clubs.clubs,
     players: state.players.players,
     error: state.players.error,
     current: state.players.current,

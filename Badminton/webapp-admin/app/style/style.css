@@ -11,3 +11,34 @@ html {
 body {
 	background: transparent;
 }
+
+
+.score-input input {
+	text-align: center!important;
+}
+.game-list {
+	list-style-type: none;
+    margin: 0;
+    padding: 10px 0 10px 0;
+}
+.game-list .game-container{
+	display: inline-block;
+	position: relative;
+	border: 1px solid #00bcd4;
+    padding: 5px;
+    margin: 5px;
+}
+
+.game-list h4 {
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+.game-list .btn-supp {
+	position: absolute!important;
+    right: 5px;
+    height: auto!important;
+    width: auto!important;
+    padding: 0!important;
+}

@@ -9,8 +9,3 @@ alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(
 
 # Delete all stopped containers and untagged images.
 alias dockerclean='dockercleanc || true && dockercleani'
-
-#configure env
-alias configure=''
-alias bestSpot4me_home='cd /vagrant/BestSpot4Me'
-alias bestSpot4me_start='cd /vagrant/BestSpot4Me && docker-compose up -d'

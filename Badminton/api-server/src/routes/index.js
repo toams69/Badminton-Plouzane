@@ -1,7 +1,14 @@
 var express     = require('express');
 var router      = express.Router();
 
-require('./club')(router);
-require('./player')(router);
+
+var schemas = {};
+
+require('./club')(router, schemas);
+require('./player')(router, schemas);
+require('./enrollment')(router, schemas);
+require('./team')(router, schemas);
+require('./game')(router, schemas);
+require('./contest')(router, schemas);
 
 module.exports = router;

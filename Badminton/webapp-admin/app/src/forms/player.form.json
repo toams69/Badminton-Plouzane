@@ -13,6 +13,11 @@
         "title": "Prenom du joueur",
         "type": "string"
       },
+      "sexe": {
+        "title": "Sexe du joueur",
+        "defaultValue": "M",
+        "type": "string"
+      },
       "date": {
         "title": "Date de naissance",
         "type": "string",

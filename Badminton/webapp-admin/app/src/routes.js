@@ -6,6 +6,8 @@ import Dashboard from './pages/Dashboard';
 
 import AdminJoueur from './pages/Admin/AdminJoueur';
 import AdminClub from './pages/Admin/AdminClub';
+import AdminTeam from './pages/Admin/AdminTeam';
+import AdminMatch from './pages/Admin/AdminMatch';
 
 export default (
 	<Route path="/" component={App}>
@@ -14,6 +16,8 @@ export default (
 			<Route path="/admin/dashboard" component={Dashboard} />
 			<Route path="/admin/joueurs" component={AdminJoueur} />
 			<Route path="/admin/clubs" component={AdminClub} />
+			<Route path="/admin/equipes" component={AdminTeam} />
+			<Route path="/admin/rencontre" component={AdminMatch} />
 		</Route>
 	</Route>
 );

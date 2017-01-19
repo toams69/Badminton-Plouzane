@@ -1,4 +1,4 @@
-module.exports = function(router) {
+module.exports = function(router, schemas) {
   var mongoose    = require('mongoose');
   var timestamps  = require('mongoose-timestamp');
   var playerSchema = require("../forms/player.form.json");
@@ -9,6 +9,8 @@ module.exports = function(router) {
   console.log(schema);
   var playerSchema = mongoose.Schema(schema);
   var Players = mongoose.model('players', playerSchema);
+
+  schemas.players = Players;
 
   router.get('/players/?', function(req, res) {
     Players
@@ -33,6 +35,7 @@ module.exports = function(router) {
      var player = new Players({
           nom: body.nom,
           prenom: body.prenom,
+          sexe: body.sexe,
           date: body.date,
           email: body.email,
           telephone: body.telephone
@@ -70,6 +73,7 @@ module.exports = function(router) {
           res.send(err);
         player.nom= body.player.nom;
         player.prenom= body.player.prenom;
+        player.sexe= body.player.sexe,
         player.date= body.player.date;
         player.email= body.player.email;
         player.telephone= body.player.telephone;

@@ -21,9 +21,7 @@ var config = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias:{
-      _common: path.resolve( __dirname, '../common/' ),
-      webworkify: 'webworkify-webpack',
-      'mapbox-gl': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
+      _containers: path.resolve( __dirname, '/src/containers/' ),
     }
    // root: [ path.join(__dirname, 'app') ]
   },
@@ -70,15 +68,6 @@ var config = {
                 presets: [ "es2015", "react", "stage-1" ]
               },
               exclude: /node_modules/,
-          },
-          {
-            test: /\.js$/,
-            include: path.resolve(__dirname, 'node_modules/webworkify/index.js'),
-            loader: 'worker'
-          },
-          {
-            test: /mapbox-gl.+\.js$/,
-            loader: 'transform/cacheable?brfs'
           }
       ]
   },

@@ -5,6 +5,8 @@ import FontIcon from 'material-ui/FontIcon';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import IconButton from 'material-ui/IconButton';
 import Grid from '_components/Grid';
@@ -25,11 +27,13 @@ const styles = {
 
 export default class Player extends Component {
 	state = {
-		open: false
+		open: false,
+		club: null
 	}
 
 	componentWillMount() {
 		this.props.getAllPlayers();
+		this.props.getAllClubs();
 	}
 
 
@@ -77,14 +81,24 @@ export default class Player extends Component {
 	}
 
 	updatePlayer() {
-		this.props.updatePlayer(this.props.current).then(() => {
+		this.props.updatePlayer(this.props.current, this.state.club).then(() => {
 			this.setState({open: false, "showAdd": false, "showEdit": false});
 		});
 	}
 
+
+	handleClubChange = (event, index, value) => this.setState({club: value});
+
+
 	render() {
-		const {players, error, current, jsonForm} = this.props;
+		const {players, error, current, jsonForm, clubs} = this.props;
 		let actions = [];
+		const clubItems = [];
+		clubs.forEach(c => {
+			clubItems.push(<MenuItem key={c._id} primaryText={c.nom} value={c._id}/>);
+		});
+
+
 
 		const dialog_actions = [
 			<RaisedButton
@@ -132,18 +146,29 @@ export default class Player extends Component {
 					!this.state.showAdd ? actions : null
 				}</div>
 				<br/>
-				<div>
+
 				{
 					this.state.showAdd || this.state.showEdit ?
-					<JsonForm jsonForm={jsonForm} current={current} style={styles.form} 
-						submitAction={this.updatePlayer.bind(this)}
-						title= {this.state.showAdd ? "Ajouter un joueur" : "Edition d'un joueur"}
-						resetAction={this.onResetClicked.bind(this)}
-						errors={error ? error.errors : null}
-						updateField={this.props.updateField}
-					/> : null
+					<div>
+					  <h3>{current && current.isNew ? "Ajouter un joueur" : "Edition d'un joueur"}</h3>
+						<SelectField
+		          value={this.state.club}
+		          onChange={this.handleClubChange}
+		          floatingLabelText="Choix du club pour la saison"
+		        >
+		        {clubItems}
+		        </SelectField>
+						<JsonForm jsonForm={jsonForm} current={current} style={styles.form}
+							submitAction={this.updatePlayer.bind(this)}
+							title= ""
+							resetAction={this.onResetClicked.bind(this)}
+							errors={error ? error.errors : null}
+							updateField={this.props.updateField}
+						/>
+					</div>
+					: null
 				}
-				</div>
+
 				<Dialog
 					title="Suppression de joueur"
 					actions={dialog_actions}

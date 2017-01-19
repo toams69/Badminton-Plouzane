@@ -1,6 +1,7 @@
-import axios from 'axios'; 
+import axios from 'axios';
 
 export const UPDATE_PLAYER = 'UPDATE_PLAYER';
+export const UPDATE_PLAYER_CLUB = 'UPDATE_PLAYER_CLUB';
 export const UPDATE_PLAYER_SUCCESS = 'UPDATE_PLAYER_SUCCESS';
 export const UPDATE_PLAYER_FAILURE = 'UPDATE_PLAYER_FAILURE';
 
@@ -53,6 +54,19 @@ export function updatePlayer(player) {
     payload: request
   };
 }
+
+export function updatePlayerClub(playerId, clubId, year) {
+  let request = null;
+
+  request = axios.post(`${ROOT_URL}/enrollments`, {"playerId": playerId, "clubId": clubId, "saison": year});
+
+  return {
+    type: UPDATE_PLAYER_CLUB,
+    payload: request
+  };
+}
+
+
 
 export function updatePlayerSuccess(player) {
   return {

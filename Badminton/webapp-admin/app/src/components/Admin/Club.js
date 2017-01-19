@@ -126,9 +126,11 @@ export default class Club extends Component {
 
 		}
 
+		let gridHeight = clubs && clubs.length >= 4 ? "200px" : null;
+
 		return (
 			<div style={styles.container}>
-				<Grid jsonData={clubs} onRowSelection={this.onClubSelected.bind(this)} selected={current}/>
+				<Grid jsonData={clubs} onRowSelection={this.onClubSelected.bind(this)} selected={current} height={gridHeight}/>
 				<br/>
 				<div>{
 					!this.state.showAdd ? actions : null
@@ -137,7 +139,7 @@ export default class Club extends Component {
 				<div>
 				{
 					this.state.showAdd || this.state.showEdit ?
-					<JsonForm jsonForm={jsonForm} current={current} style={styles.form} 
+					<JsonForm jsonForm={jsonForm} current={current} style={styles.form}
 						submitAction={this.updateClub.bind(this)}
 						title= {this.state.showAdd ? "Ajouter un club" : "Edition d'un club"}
 						resetAction={this.onResetClicked.bind(this)}

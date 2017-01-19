@@ -1,4 +1,4 @@
-module.exports = function(router) {
+module.exports = function(router, schemas) {
   var mongoose    = require('mongoose');
   var timestamps  = require('mongoose-timestamp');
   var clubSchema = require("../forms/club.form.json");
@@ -6,25 +6,144 @@ module.exports = function(router) {
   //var mongoosify = require("mongoosify");
 
   var schema = utils.jsonSchemaToMongoose(clubSchema);
-  console.log(schema);
   var clubSchema = mongoose.Schema(schema);
   var Clubs = mongoose.model('clubs', clubSchema);
 
-  router.get('/clubs/?', function(req, res) {
-    Clubs
-      .find({})
-      .sort({
-        nom: 1
-      })
-      .exec(function(err, clubs) {
-        if (err) {
-          console.log(err);
-          return res.status(500).json({
-            error: 'Could not retrieve clubs'
-          });
+  schemas.clubs = Clubs;
+
+  router.get('/clubs/', function(req, res) {
+
+    if (req.query.subresources && req.query.subresources === "*") {
+
+      var pipeline = [
+        {
+          $match: {'saison': 2016}
+        },
+        {
+          $group : {
+            _id : { clubId: "$_clubId" ,  saison: "$saison" },
+            saison: {$first: "$saison"},
+            club: {$first: "$_clubId"},
+            players: { $push: "$_playerId" }
+          }
         }
-        res.json(clubs);
-      });
+      ]
+      var Enrollments = schemas.enrollments;
+      var Players = schemas.players;
+      Enrollments
+        .aggregate(pipeline, function(err, result) {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({
+              error: 'Could not retrieve clubs'
+            });
+          }
+          var opts = [
+             { path: 'club', model: 'clubs' }
+             , { path: 'players', model: 'players'}
+          ];
+          Enrollments.populate(result, opts, function(err, result) {
+            if (err) {
+              console.log(err);
+              return res.status(500).json({
+                error: 'Could not retrieve clubs'
+              });
+            }
+            //result = result.map(function(o) { o.club.players = o.players; return o.club;})
+            res.json(result);
+          });
+
+        });
+
+    } else {
+      Clubs
+        .find({})
+        .sort({
+          nom: 1
+        })
+        .exec(function(err, clubs) {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({
+              error: 'Could not retrieve clubs'
+            });
+          }
+          res.json(clubs);
+        });
+    }
+
+  });
+
+
+  router.get('/clubs/:id', function(req, res) {
+    var id = req.params.id;
+    if (req.query.subresources && req.query.subresources === "*") {
+
+      var match = {"_clubId": new mongoose.Types.ObjectId(id)};
+      if (req.query.saison) {
+        match.saison = req.query.saison;
+      }
+      var pipeline = [
+        {
+          $match: match
+        },
+        {
+          $group : {
+            _id : { clubId: "$_clubId" ,  saison: "$saison" },
+            saison: {$first: "$saison"},
+            club: {$first: "$_clubId"},
+            players: { $push: "$_playerId" }
+          }
+        }
+      ]
+      var Enrollments = schemas.enrollments;
+      var Players = schemas.players;
+      Enrollments
+        .aggregate(pipeline, function(err, result) {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({
+              error: 'Could not retrieve clubs'
+            });
+          }
+          var opts = [
+             { path: 'club', model: 'clubs' }
+             , { path: 'players', model: 'players'}
+          ];
+          Enrollments.populate(result, opts, function(err, result) {
+            if (err) {
+              console.log(err);
+              return res.status(500).json({
+                error: 'Could not retrieve clubs'
+              });
+            }
+            //result = result.map(function(o) { o.club.players = o.players; return o.club;})
+            res.json(result);
+          });
+
+        });
+
+    } else {
+      var find = {"_id": id};
+      if (req.query.saison) {
+        find.saison = req.query.saison;
+      }
+      Clubs
+        .find(find)
+        .sort({
+          nom: 1
+        })
+        .exec(function(err, clubs) {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({
+              error: 'Could not retrieve clubs'
+            });
+          }
+          res.json(clubs);
+        });
+    }
+
   });
 
 

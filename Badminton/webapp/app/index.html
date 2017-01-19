@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-   -->
-  <title>BestSpot4Me</title>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.2/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="./style/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
-  >
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Badminton - Admin</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./assets/roboto.css" rel="stylesheet">
+    <link href="./assets/icon.css" rel="stylesheet">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1"
+    >
   </head>
   <body>
     <div id="body"></div>
   </body>
-  <!-- <script src="webpack-dev-server.js"></script>
-  <script src="/vendor.js"></script>
-  <script src="/app.js"></script> -->
-
 
   <script>
     var WebFontConfig = {
@@ -35,7 +28,20 @@
       s.parentNode.insertBefore(wf, s);
     })();
   </script>
-<!--   <script src="/vendor.min.js"></script>
-  <script src="/app.min.js"></script> -->
-  <script src="/bundle.js"></script>
+
+  <script>
+    var WebFontConfig = {
+      google: { families: [ 'Roboto:400,300,500:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = './assets/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
+
+  <script src="./bundle.js"></script>
 </html>

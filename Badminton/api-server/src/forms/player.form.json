@@ -13,6 +13,10 @@
         "title": "Prenom du joueur",
         "type": "string"
       },
+      "sexe": {
+        "title": "Sexe du joueur",
+        "type": "string"
+      },
       "date": {
         "title": "Date de naissance",
         "type": "string",

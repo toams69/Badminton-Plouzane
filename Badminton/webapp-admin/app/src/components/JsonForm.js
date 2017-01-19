@@ -61,7 +61,7 @@ export default class JsonForm extends Component {
               onChange={this._handleTextFieldChange.bind(this, key)}
             />
           )
-        } else 
+        } else
         return (<TextField
                   key={this.props.current._id + key}
                   hintText=""
@@ -96,8 +96,9 @@ export default class JsonForm extends Component {
 
     return (
       <div style={this.props.style}>
+
         <h3>{title}</h3>
-        <hr/>
+        {title ? <hr/> : null}
         <form onSubmit={this.onSubmit.bind(this)}>
           {fields}
           <br />

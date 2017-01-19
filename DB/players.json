@@ -1,0 +1,158 @@
+{"_id":{ "$oid": "581cfc5284d054001b20a8b4" },"nom":"Pariaud","prenom":"Thomas","sexe":"M","__v":0}
+{"_id":{ "$oid": "581cfc5e84d054001b20a8b6" },"nom":"Cozic","prenom":"Philippe","sexe":"M","__v":0}
+{"_id":{ "$oid": "581cfc6b84d054001b20a8b8" },"nom":"Bachelard","prenom":"Jérome","sexe":"M","__v":0}
+{"_id":{ "$oid": "581cfc7484d054001b20a8ba" },"nom":"Dété","prenom":"Lionel","sexe":"M","__v":0}
+{"_id":{ "$oid": "581cfc8184d054001b20a8bc" },"nom":"Sornet","prenom":"Ludovic","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d035e84d054001b20a8f7" },"nom":"Savary","prenom":"Johan","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d037684d054001b20a8f9" },"nom":"Quere","prenom":"Thierry","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d038484d054001b20a8fb" },"nom":"Deman","prenom":"David","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d039284d054001b20a8fd" },"nom":"Martin","prenom":"Erwann","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d03ac84d054001b20a8ff" },"nom":"Baudot","prenom":"Frédéric","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d03bc84d054001b20a901" },"nom":"Saliou","prenom":"Gaël","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d03d184d054001b20a903" },"nom":"Delarose","prenom":"Michel","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d03e184d054001b20a905" },"nom":"Desvignes","prenom":"Ted","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d03ed84d054001b20a907" },"nom":"Aimé","prenom":"Fanch","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d03fa84d054001b20a909" },"nom":"Le Gac","prenom":"Ronan","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d040984d054001b20a90b" },"nom":"Arzel","prenom":"Yannick","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d041a84d054001b20a90d" },"nom":"Miry","prenom":"Mickael","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d043084d054001b20a90f" },"nom":"Auffret","prenom":"Mikael","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d043a84d054001b20a911" },"nom":"Lamour","prenom":"Thomas","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d044f84d054001b20a913" },"nom":"Gueguen","prenom":"Régis","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d045d84d054001b20a915" },"nom":"Le Roy","prenom":"Cédric","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d046984d054001b20a917" },"nom":"Marrec","prenom":"Fred","sexe":"M","__v":0}
+{"_id":{ "$oid": "581d047484d054001b20a919" },"nom":"Riou","prenom":"Hubert","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b5bb8932bf001be2d5a6" },"nom":"Le Lann","prenom":"Erwan","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b5c88932bf001be2d5a8" },"nom":"Masse","prenom":"Vincent","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b5d98932bf001be2d5aa" },"nom":"Godard","prenom":"Yann","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b5eb8932bf001be2d5ac" },"nom":"Le Bris","prenom":"Frédéric","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b5f88932bf001be2d5ae" },"nom":"Marsille","prenom":"Stéphane","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6078932bf001be2d5b0" },"nom":"Albert","prenom":"Maxime","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6208932bf001be2d5b2" },"nom":"Richetin","prenom":"Sébastion","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b63a8932bf001be2d5b4" },"nom":"Kerdoncuff","prenom":"Lionel","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b64b8932bf001be2d5b6" },"nom":"Ait-Meziane","prenom":"Mick","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b65b8932bf001be2d5b8" },"nom":"Dauguet","prenom":"Mick","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b66a8932bf001be2d5ba" },"nom":"Abivien","prenom":"Jean-Marie","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6798932bf001be2d5bc" },"nom":"Delrue","prenom":"Jérôme","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6888932bf001be2d5be" },"nom":"Guivarch","prenom":"Yves","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b69b8932bf001be2d5c0" },"nom":"Congratel","prenom":"Lionel","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6a58932bf001be2d5c2" },"nom":"Boutet","prenom":"Xavier","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6b28932bf001be2d5c4" },"nom":"Le Coz","prenom":"Sylvain","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6c18932bf001be2d5c6" },"nom":"Lestang","prenom":"Olivier","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6d68932bf001be2d5c8" },"nom":"Lebacle","prenom":"Julien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6e48932bf001be2d5ca" },"nom":"Marcault","prenom":"Jean-Noel","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b6f68932bf001be2d5cc" },"nom":"Bonde","prenom":"Jean-Philippe","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b7018932bf001be2d5ce" },"nom":"Le Nen","prenom":"Franck","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b7198932bf001be2d5d1" },"nom":"Ligron","prenom":"Loïc","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b7238932bf001be2d5d3" },"nom":"Ogor","prenom":"Romain","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b72e8932bf001be2d5d5" },"nom":"Tillenon","prenom":"Ronan","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b7ff8932bf001be2d5d7" },"nom":"Le touzic","prenom":"Yann","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b80b8932bf001be2d5d9" },"nom":"Mear","prenom":"Bertrand","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8198932bf001be2d5db" },"nom":"Herry","prenom":"Yann","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8258932bf001be2d5dd" },"nom":"Forrest","prenom":"Philippe","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b82e8932bf001be2d5df" },"nom":"Carre","prenom":"Eric","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8398932bf001be2d5e1" },"nom":"Raoul","prenom":"Damien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b84c8932bf001be2d5e3" },"nom":"Kerherve","prenom":"Alain","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b85c8932bf001be2d5e5" },"nom":"Richard","prenom":"Manu","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8678932bf001be2d5e7" },"nom":"Le Guerin","prenom":"Denis","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8728932bf001be2d5e9" },"nom":"Gallais","prenom":"Philippe","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8878932bf001be2d5eb" },"nom":"Boisserin","prenom":"François-Xavier","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8928932bf001be2d5ed" },"nom":"Pinsard","prenom":"Guillaume","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b89d8932bf001be2d5ef" },"nom":"Farouel","prenom":"Pol","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8a88932bf001be2d5f1" },"nom":"Kereneur","prenom":"Romain","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8b58932bf001be2d5f3" },"nom":"Cabel","prenom":"Antoine","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8c78932bf001be2d5f5" },"nom":"Baurand","prenom":"Nathanaël","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8d38932bf001be2d5f7" },"nom":"Capitaine","prenom":"Sanislas","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8e08932bf001be2d5f9" },"nom":"Capitaine","prenom":"Cédric","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8f48932bf001be2d5fb" },"nom":"Morisset","prenom":"Fabien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b8ff8932bf001be2d5fd" },"nom":"Roy","prenom":"Anthony","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b90b8932bf001be2d5ff" },"nom":"Le Roy","prenom":"Lionel","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9168932bf001be2d601" },"nom":"Cueff","prenom":"Stéphane","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9238932bf001be2d603" },"nom":" ","prenom":"Jérémy","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b92f8932bf001be2d605" },"nom":"Jestin","prenom":"Yves","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9388932bf001be2d607" },"nom":" ","prenom":"Julien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9468932bf001be2d609" },"nom":"Salaun","prenom":"Anthony","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9578932bf001be2d60b" },"nom":"Croguennec","prenom":"Maxime","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9688932bf001be2d60d" },"nom":"Cornen","prenom":"Fabien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9738932bf001be2d60f" },"nom":"Quere","prenom":"Manuel","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9848932bf001be2d611" },"nom":"Le Meur","prenom":"Mickaël","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9948932bf001be2d613" },"nom":"Barbarit","prenom":"Fabrice","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9a08932bf001be2d615" },"nom":"Madec","prenom":"Anthony","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9ab8932bf001be2d617" },"nom":"Gorge","prenom":"Fanch","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9b98932bf001be2d619" },"nom":"Tellier","prenom":"Jules","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880b9c88932bf001be2d61b" },"nom":"Merigot","prenom":"Ludovic","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bd5c8932bf001be2d61d" },"nom":"Marzin","prenom":"Mathieu","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bd6d8932bf001be2d61f" },"nom":"Rivoalen","prenom":"Yves","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bd778932bf001be2d621" },"nom":"Devienne","prenom":"Mathieu","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bd818932bf001be2d623" },"nom":"Perro","prenom":"Kevin","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bd958932bf001be2d625" },"nom":"Vanderbauwhede","prenom":"Philippe","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bda18932bf001be2d627" },"nom":"Daulin","prenom":"Julien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bdb68932bf001be2d629" },"nom":"Daniel","prenom":"Jean-Yves","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bdc58932bf001be2d62b" },"nom":"Poilbout","prenom":"Baptiste","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bdd38932bf001be2d62d" },"nom":"Besnier","prenom":"Gaël","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bddd8932bf001be2d62f" },"nom":"Navaud","prenom":"Arthur","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bde98932bf001be2d631" },"nom":"Le Gall","prenom":"Stéphane","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bdf78932bf001be2d633" },"nom":"Rousseau","prenom":"Fabien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be048932bf001be2d635" },"nom":"Le Borgne","prenom":"Anthony","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be118932bf001be2d637" },"nom":"Gaunand","prenom":"Sébastien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be1d8932bf001be2d63a" },"nom":" ","prenom":"Lucas","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be2b8932bf001be2d63c" },"nom":"Riou","prenom":"Gérard","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be3a8932bf001be2d63e" },"nom":"Cochon","prenom":"Olivier","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be498932bf001be2d640" },"nom":"Quemeneur","prenom":"Guy","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be5b8932bf001be2d642" },"nom":"Kerebel","prenom":"Ronan","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be6a8932bf001be2d644" },"nom":"Jouan","prenom":"Pierre-Yvon","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be778932bf001be2d646" },"nom":"Le Chenadec","prenom":"Gilles","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be868932bf001be2d648" },"nom":"Albert","prenom":"Maxime","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880be9f8932bf001be2d64a" },"nom":"Leroux","prenom":"Mikaël","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880beb98932bf001be2d64c" },"nom":"Brochard","prenom":"Sylvain","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bed18932bf001be2d64e" },"nom":"N'Guyen","prenom":"Jean-Emile","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bedd8932bf001be2d650" },"nom":"Cozic","prenom":"Jean-Marie","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bee88932bf001be2d652" },"nom":"Magnant","prenom":"Christophe","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf028932bf001be2d654" },"nom":"Bilhant","prenom":"Gérard","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf0a8932bf001be2d656" },"nom":"Paugam","prenom":"Patrice","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf198932bf001be2d658" },"nom":"Abiven","prenom":"Luc","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf2a8932bf001be2d65a" },"nom":"Bilhant","prenom":"Sylvain","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf3c8932bf001be2d65c" },"nom":"Le Guen","prenom":"Sébastien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf488932bf001be2d65e" },"nom":"Falezan","prenom":"Philippe","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf5d8932bf001be2d660" },"nom":"Favre","prenom":"Gregory","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf6c8932bf001be2d662" },"nom":"Louarn","prenom":"Jean-Michel","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bf748932bf001be2d664" },"nom":"Garrec","prenom":"Julien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880bfde8932bf001be2d666" },"nom":"Crabos","prenom":"Joris","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c0f98932bf001be2d668" },"nom":"Saliou","prenom":"Bernard","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1328932bf001be2d66a" },"nom":"Gallin","prenom":"Serge","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c13e8932bf001be2d66c" },"nom":"L'Eost","prenom":"Mathieu","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1488932bf001be2d66e" },"nom":"Ruello","prenom":"Olivier","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1538932bf001be2d670" },"nom":"Corbiere","prenom":"Romain","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1658932bf001be2d672" },"nom":"Poitral","prenom":"Christopher","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1708932bf001be2d674" },"nom":"Madec","prenom":"Steven","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c17e8932bf001be2d676" },"nom":"Vincenot","prenom":"Fédéric","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c18b8932bf001be2d678" },"nom":"Vallette","prenom":"Guillaume","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1968932bf001be2d67a" },"nom":"Morvan","prenom":"Eric","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1a38932bf001be2d67c" },"nom":"Jaffrez","prenom":"Maxime","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1ab8932bf001be2d67e" },"nom":"Madec","prenom":"Maxime","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1b88932bf001be2d680" },"nom":"Audras","prenom":"Alexandre","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1c58932bf001be2d682" },"nom":"Beaufay","prenom":"Johan","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1e28932bf001be2d684" },"nom":"Boscot","prenom":"Yannick","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1f08932bf001be2d686" },"nom":"Le Boulch","prenom":"Marc","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c1fc8932bf001be2d688" },"nom":"Pernes","prenom":"Florian","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2088932bf001be2d68a" },"nom":"Quinio","prenom":"Jean-Marie","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c21a8932bf001be2d68c" },"nom":"Tretsch","prenom":"Florent","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c22a8932bf001be2d68e" },"nom":"Le Bihan","prenom":"Damien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2398932bf001be2d690" },"nom":"Defeuer","prenom":"Renald","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2448932bf001be2d692" },"nom":"Renault","prenom":"Franck","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c24f8932bf001be2d694" },"nom":"Renaud","prenom":"Erwan","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c25e8932bf001be2d696" },"nom":"Thepaud","prenom":"Alexandre","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2718932bf001be2d698" },"nom":"Duedal","prenom":"Arnaud","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2868932bf001be2d69a" },"nom":"Aufret","prenom":"Fabrice","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2948932bf001be2d69c" },"nom":"Laurent","prenom":"Sébastien","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2a88932bf001be2d69e" },"nom":"Piriou","prenom":"Yann","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2b28932bf001be2d6a0" },"nom":" ","prenom":"Anthony","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2bf8932bf001be2d6a2" },"nom":"Didou","prenom":"Yohann","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2cb8932bf001be2d6a4" },"nom":"Guiheux","prenom":"Nicolas","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2db8932bf001be2d6a6" },"nom":"Taile-Manikom","prenom":"Serge","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2e78932bf001be2d6a8" },"nom":"Gouesin","prenom":"Maxime","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c2f38932bf001be2d6aa" },"nom":"Calvez","prenom":"Vincent","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c3048932bf001be2d6ac" },"nom":"Vullierme","prenom":"Jean-Yves","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c7878932bf001be2d6b8" },"nom":" ","prenom":"François","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c7d98932bf001be2d6ba" },"nom":" Q","prenom":"Cédric","sexe":"M","__v":0}
+{"_id":{ "$oid": "5880c96c8932bf001be2d6c5" },"nom":" ","prenom":"Marine","sexe":"F","__v":0}
+{"_id":{ "$oid": "5880ccba8932bf001be2d6d0" },"nom":"Plouider","prenom":"Tywan","sexe":"M","__v":0}

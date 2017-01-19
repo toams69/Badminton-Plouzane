@@ -77,34 +77,24 @@ services:
     links:
       - db
 
-  # webapp:
-  #   build: ./client/web/
-  #   container_name: webapp
-  #   volumes:
-  #     - ./client/web/app:/app
-  #     - ./client/web/package.json:/package.json
-  #     - ./client/common:/common
-  #   ports:
-  #     - "8080:8080"
-  #   links:
-  #     - rest-api
-  #   environment:
-  #     - PORT=8080
-
-  # webapp-prod:
-  #   build: ./client/web/
-  #   container_name: webapp-prod
-  #   volumes:
-  #     - ./client/web/app:/app
-  #     - ./client/web/package.json:/package.json
-  #     - ./client/common:/common
-  #   ports:
-  #     - "8083:8083"
-  #   links:
-  #     - rest-api
-  #   environment:
-  #     - PORT=8083
-  #     - NODE_ENV=production
+  webapp:
+    build: ./webapp/
+    container_name: webapp
+    volumes:
+      - ./webapp/app:/app
+      - ./webapp/package.json:/package.json
+    ports:
+      - "2104:2104"
+    depends_on:
+      - rest-api
+    links:
+      - db
+    environment:
+      - PORT=2104
+      - DB=badminton
+      - DB_HOST=db
+      - DB_PORT=27017
+      - DB_URL=mongodb://db:27017/badminton
   
   webapp-admin:
     build: ./webapp-admin/
