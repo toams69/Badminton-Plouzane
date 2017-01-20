@@ -8,7 +8,7 @@ export const GET_CLUB = 'GET_CLUB';
 const ROOT_URL = 'http://localhost:3002/api';
 
 export function getAllClubs() {
-  const request = axios.get(`${ROOT_URL}/clubs`);
+  const request = axios.get(`${ROOT_URL}/clubs?subresources=*`);
   return {
     type: GET_CLUBS,
     payload: request

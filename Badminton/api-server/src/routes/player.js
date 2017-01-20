@@ -16,6 +16,7 @@ module.exports = function(router, schemas) {
     Players
       .find({})
       .sort({
+        prenom: 1,
         nom: 1
       })
       .exec(function(err, players) {

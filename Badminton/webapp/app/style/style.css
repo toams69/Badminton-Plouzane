@@ -11,3 +11,24 @@ html {
 body {
 	background: transparent;
 }
+
+.player-component .players-container {
+	background-color: #FFFFFF;
+	overflow: auto;
+	position: absolute;
+	top: 131px;
+	bottom: 0px;
+	left: 8px;
+	right: 8px;
+}
+.player-component .search-container {
+	display: none;
+}
+.player-component.search .players-container {
+	top: 187px;
+}
+.player-component.search .search-container {
+	display: block;
+}
+
+}

@@ -40,7 +40,7 @@ export default class App extends Component {
 			<AppContainer>
 			 	<div>
 					<HeaderContainer handleToggle={this.handleToggle} />
-					<Drawer width={400} open={this.state ? this.state.open : false} containerStyle={styles.drawer} onRouteChange={this.handleToggle}>
+					<Drawer docked={false} open={this.state ? this.state.open : false} containerStyle={styles.drawer} onRouteChange={this.handleToggle} onRequestChange={(open) => this.setState({open})}>
 						<DrawerContainer onItemClick={this.handleItemMenuClick}/>
 					</Drawer>
 					<div>

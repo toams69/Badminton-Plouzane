@@ -21,9 +21,30 @@ export default function(state = INITIAL_STATE, action) {
     case GET_CLUBS:
       return { ...state, error:null, loading: true};
     case GET_CLUBS_SUCCESS:
+      const clubs = [];
+      _.each(action.payload.data, function(d) {
+        var c = d.club;
+        c.players = d.players;
+        c.players.sort(function(a, b) {
+          var o1 = a.prenom.toLowerCase();
+          var o2 = b.prenom.toLowerCase();
+          var p1 = a.nom.toLowerCase();
+          var p2 = b.nom.toLowerCase();
+          if (o1 < o2) return -1;
+          if (o1 > o2) return 1;
+          if (p1 < p2) return -1;
+          if (p1 > p2) return 1;
+          return 0;
+        });
+        clubs.push(d.club);
+      });
+      clubs.sort(function(a, b) {
+        return a.nom > b.nom ? 1 : -1;
+      });
+
       return { 
         ...state,
-        clubs: action.payload.data,
+        clubs: clubs,
         error:null,
         loading: false
       };
