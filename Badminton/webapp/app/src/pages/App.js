@@ -17,7 +17,7 @@ const styles = {
 };
 
 export default class App extends Component {
-
+ 
   static contextTypes = {
    	router: PropTypes.object
   };

@@ -31,4 +31,18 @@ body {
 	display: block;
 }
 
+
+.player-container {
+	background: white;
+}
+
+.tab-content {
+	min-height: 500px;
+}
+.player-info {
+	/*height: 200px;*/
+}
+
+.player-tab {
+	/*padding: 0 10px;*/
 }

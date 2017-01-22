@@ -47,6 +47,7 @@
     "react-router": "*",
     "material-ui": "*",
     "react-tap-event-plugin": "*",
+    "react-swipeable-views": "*",
     "react-schema-form": "*",
     "redux": "*",
     "redux-form": "*",

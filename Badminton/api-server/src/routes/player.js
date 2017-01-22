@@ -5,6 +5,7 @@ module.exports = function(router, schemas) {
   var utils = require("../utils/jsonParser");
   //var mongoosify = require("mongoosify");
 
+  var _  = require('underscore');
   var schema = utils.jsonSchemaToMongoose(playerSchema);
   console.log(schema);
   var playerSchema = mongoose.Schema(schema);
@@ -30,6 +31,57 @@ module.exports = function(router, schemas) {
       });
   });
 
+  router.get('/players/:playerId', function(req, res) {
+    var playerId = req.params.playerId;
+
+    Players.findById(playerId, function(err, player) {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({
+          error: 'Could not find player'
+        });
+      }
+      var Games = mongoose.model('Games');
+      var Teams = mongoose.model('teams');
+      console.log("Searching games for player "+ playerId);
+      var opts = [
+        { path: '_contestId', model: 'contests' },
+        { path: '_player1Id', model: 'players' },
+        { path: '_player2Id', model: 'players' },
+        { path: '_player3Id', model: 'players' },
+        { path: '_player4Id', model: 'players'}
+      ];
+       Games
+        .find({ $or: [{_player1Id: playerId}, {_player2Id: playerId}, {_player3Id: playerId}, {_player4Id: playerId}] })
+        .populate(opts)
+        .sort({
+          date: -1
+        })
+        .exec(function(err, games) {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({
+              error: 'Could not retrieve games of this player'
+            });
+          }
+          var opts = [
+            { path: '_team1Id', model: 'teams'},
+            { path: '_team2Id', model: 'teams' }
+          ];
+          Teams.populate(games, opts, function (error, games) {
+            if (err) {
+              console.log(err);
+              return res.status(500).json({
+                error: 'Could not retrieve games of this player'
+              });
+            }
+            var obj = player.toObject();
+            obj.games = games;
+            res.json(obj);
+          });
+        });
+      });
+  });
 
   router.post('/players/', function(req, res) {
      var body = req.body;

@@ -5,7 +5,7 @@ export const GET_CONTESTS_SUCCESS = 'GET_CONTESTS_SUCCESS';
 export const GET_CONTESTS_FAILURE = 'GET_CONTESTS_FAILURE';
 export const GET_CONTEST = 'GET_CONTEST';
 
-const ROOT_URL = 'http://localhost:3002/api';
+const ROOT_URL = 'http://'+window.location.hostname+':3002/api';
 
 export function getAllContests() {
   const request = axios.get(`${ROOT_URL}/contests`);

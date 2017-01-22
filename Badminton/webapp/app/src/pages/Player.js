@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PlayersContainer from '_containers/PlayersContainer.js';
+import PlayerContainer from '_containers/PlayerContainer.js';
 
 class Player extends Component {
 
   render() {
     return (
-      <PlayersContainer PlayerId={this.props.params.joueurID}/>
+      <PlayerContainer PlayerId={this.props.params.joueurID}/>
     );
   }
 }

@@ -1,7 +1,7 @@
 
 import { 
   GET_PLAYERS, GET_PLAYERS_SUCCESS, GET_PLAYERS_FAILURE,
-  GET_PLAYER
+  GET_PLAYER, GET_PLAYER_SUCCESS, GET_PLAYER_FAILURE,
 } from '../actions/players';
 
 import uuid from 'uuid';
@@ -30,8 +30,17 @@ export default function(state = INITIAL_STATE, action) {
     case GET_PLAYERS_FAILURE:
       return { ...state, error:"an error occured", loading: false};
 
+    case GET_PLAYER_SUCCESS:
+      return { 
+        ...state,
+        current: action.payload.data,
+        error:null,
+        loading: false
+      };
+    case GET_PLAYER_FAILURE:
+      return { ...state, error:"an error occured", loading: false};
     case GET_PLAYER:
-      return {...state, current: action.player,  error:null}
+      return { ...state, error:null, loading: true};
 
     default:
     return state;
