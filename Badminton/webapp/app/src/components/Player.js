@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
+import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
 import MapsPersonPin from 'material-ui/svg-icons/maps/person-pin';
 import SwipeableViews from 'react-swipeable-views';
 import ResultList from '_components/ResultList.js';
+import VersusList from '_components/VSList.js';
 
 const styles = {
   headline: {
@@ -40,8 +42,21 @@ class Player extends Component {
 
 	render() {
       let games = [];
+      if (!this.props.player) {
+        return (<div></div>);
+      }
+
       if (this.props.player && this.props.player.games) {
         games = this.props.player.games;
+      }
+
+      let avatar = null, backgroundColor = "rgb(166, 174, 249)";
+      if (this.props.player.sexe == "M") {
+        avatar = "/assets/male.png";
+        backgroundColor = "rgb(166, 174, 249)";
+      } else {
+        avatar = "/assets/female.png";
+        backgroundColor = "rgb(245, 129, 255)";
       }
       return (
           <div className="player-container">
@@ -78,14 +93,17 @@ class Player extends Component {
                     index={this.state.slideIndex}
                     onChangeIndex={this.handleChange}
                   >
-                  <div>
-                    Joueur Thomas
+                  <div className="profil">
+                    <div>
+                      <Avatar className="avatar" size="100" src={avatar} backgroundColor={backgroundColor} />
+                    </div>
+                    <h1>{this.props.player.prenom + " " + this.props.player.nom}</h1>
                   </div>
                   <div>
                     <ResultList playerID={this.props.PlayerId} games={games}/> 
                   </div>
                   <div style={styles.slide}>
-                    slide n°2
+                    <VersusList playerID={this.props.PlayerId} games={games} />
                   </div>
                   <div style={styles.slide}>
                     slide n°3

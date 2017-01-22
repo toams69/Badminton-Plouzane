@@ -24,7 +24,7 @@ class Header extends Component {
 
 	render() {
       return (
-          <AppBar title="Badminton ~ " onLeftIconButtonTouchTap={this.props.handleToggle} />
+          <AppBar title={this.props.title} onLeftIconButtonTouchTap={this.props.handleToggle} />
       );
 	}
 }

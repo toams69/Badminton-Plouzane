@@ -75,7 +75,7 @@ class ResultList extends Component {
           }
 
           cardList.push(
-             <Card>
+             <Card className="result-card">
                 <CardHeader
                   title={win ? "Victoire contre " + adversaire : "Défaite contre " + adversaire}
                   subtitle={isSimple ? "Simple" : "Double avec " + partenaire}

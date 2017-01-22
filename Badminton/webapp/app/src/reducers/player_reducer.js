@@ -12,7 +12,7 @@ const INITIAL_STATE = {
   status: null, 
   error: null, 
   loading: false,
-  current: Object.assign({}, {_id: uuid.v1()})
+  current: null
 };
 
 export default function(state = INITIAL_STATE, action) {

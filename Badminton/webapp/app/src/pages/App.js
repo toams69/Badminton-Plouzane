@@ -39,7 +39,7 @@ export default class App extends Component {
 		<MuiThemeProvider muiTheme={getMuiTheme()}>
 			<AppContainer>
 			 	<div>
-					<HeaderContainer handleToggle={this.handleToggle} />
+					<HeaderContainer handleToggle={this.handleToggle} title="Badufolep 29"/>
 					<Drawer docked={false} open={this.state ? this.state.open : false} containerStyle={styles.drawer} onRouteChange={this.handleToggle} onRequestChange={(open) => this.setState({open})}>
 						<DrawerContainer onItemClick={this.handleItemMenuClick}/>
 					</Drawer>
