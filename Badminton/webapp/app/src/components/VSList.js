@@ -3,6 +3,7 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import FontIcon from 'material-ui/FontIcon';
 import FlatButton from 'material-ui/FlatButton';
+import ComparisonBar from '_components/ComparisonBar.js';
 import _ from 'lodash';
 
 import {
@@ -111,6 +112,7 @@ class VSList extends Component {
                 <CardText expandable={true}>
                   <div>Victoires : {v.victoires}</div>
                   <div>Défaites : {v.defaites}</div>
+                  <ComparisonBar val1={v.victoires} val2={v.defaites} />
                   <div>Sets remportés : {v.nbSetPour}</div>
                   <div>Sets perdus : {v.nbSetContre}</div>
                   <div>Point marqués: {v.ptsPour}</div>
@@ -119,7 +121,7 @@ class VSList extends Component {
               </Card>
           );
       }, this);
-    
+
       return (
           <div className="versus-list">
            {cardList}

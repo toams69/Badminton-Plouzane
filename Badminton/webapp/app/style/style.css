@@ -67,3 +67,26 @@ body {
     margin-top: 25px;
     text-shadow: 0 2px rgba(255, 255, 255, 0.8);
 }
+
+.comparison-bar {
+
+}
+
+.comparison-bar .bar {
+	width: 84%;
+    display: inline-block;
+    height: 25px;
+    border: 1px solid #fffdb3;
+    /* text-align: center; */
+    /* border-radius: 20px; */
+    box-sizing: border-box;
+}
+
+.comparison-bar .bar .prct{
+	height: 100%;
+	box-sizing: border-box;
+	background-color: #81c784;
+	text-align: center;
+	line-height: 25px;
+	font-weight: bold;
+}
