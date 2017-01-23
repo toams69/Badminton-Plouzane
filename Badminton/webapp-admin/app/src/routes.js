@@ -10,7 +10,7 @@ import AdminTeam from './pages/Admin/AdminTeam';
 import AdminMatch from './pages/Admin/AdminMatch';
 
 export default (
-	<Route path="/" component={App}>
+	<Route path="/admin" component={App}>
 		<IndexRoute component={Dashboard} />
 		<Route path="admin">
 			<Route path="/admin/dashboard" component={Dashboard} />
