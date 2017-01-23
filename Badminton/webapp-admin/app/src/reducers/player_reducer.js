@@ -6,7 +6,7 @@ import {
  // SELECT_PLAYER_TO_EDIT, EDIT_PLAYER_SUCCESS, EDIT_PLAYER, EDIT_PLAYER_FAILURE,
   CREATE_NEW_PLAYER, UPDATE_FIELD,
   GET_PLAYER
-} from '../actions/players';
+} from '_actions/players';
 
 import uuid from 'uuid';
 import newPlayerForm from '_forms/player.form.json';

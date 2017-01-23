@@ -46,7 +46,7 @@ http {
 		#}
 
 		location / {
-			proxy_pass  http://webapp-admin:3005/;
+			proxy_pass  http://webapp:2104/;
 		}
     }
 }

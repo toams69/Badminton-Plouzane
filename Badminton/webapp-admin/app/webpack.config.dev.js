@@ -15,7 +15,8 @@ var config = {
        _containers: path.resolve( __dirname, './src/containers/' ),
        _actions: path.resolve( __dirname, './src/actions/' ),
        _components:  path.resolve( __dirname, './src/components/' ),
-       _forms:  path.resolve( __dirname, './src/forms/' )
+       _forms:  path.resolve( __dirname, './src/forms/' ),
+       _reducers:  path.resolve( __dirname, './src/reducers/' )
     }
   },
   output: {

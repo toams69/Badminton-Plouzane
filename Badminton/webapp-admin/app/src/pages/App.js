@@ -1,11 +1,11 @@
 import React from 'react';
 import { Component, PropTypes } from 'react';
-import AppContainer from '../containers/AppContainer';
+import AppContainer from '_containers/AppContainer';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import HeaderContainer from '../containers/HeaderContainer.js';
-import DrawerContainer from '../containers/DrawerContainer.js';
+import HeaderContainer from '_containers/HeaderContainer.js';
+import DrawerContainer from '_containers/DrawerContainer.js';
 import Drawer from 'material-ui/Drawer';
 
 injectTapEventPlugin();

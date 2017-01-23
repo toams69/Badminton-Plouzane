@@ -4,7 +4,7 @@ import {
   GET_TEAMS, GET_TEAMS_SUCCESS, GET_TEAMS_FAILURE,
   DELETE_TEAMS, DELETE_TEAMS_SUCCESS, DELETE_TEAMS_FAILURE,
   GET_TEAM
-} from '../actions/teams';
+} from '_actions/teams';
 
 import uuid from 'uuid';
 import _ from 'lodash'

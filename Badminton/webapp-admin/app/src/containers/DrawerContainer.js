@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Drawer from '../components/Drawer.js';
+import Drawer from '_components/Drawer.js';
 
 function mapStateToProps(state, ownProps) {
   return { 

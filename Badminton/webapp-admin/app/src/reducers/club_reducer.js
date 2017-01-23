@@ -6,7 +6,7 @@ import {
  // SELECT_CLUB_TO_EDIT, EDIT_CLUB_SUCCESS, EDIT_CLUB, EDIT_CLUB_FAILURE,
   CREATE_NEW_CLUB, UPDATE_FIELD,
   GET_CLUB
-} from '../actions/clubs';
+} from '_actions/clubs';
 
 import uuid from 'uuid';
 import newClubForm from '_forms/addclub.form.json';

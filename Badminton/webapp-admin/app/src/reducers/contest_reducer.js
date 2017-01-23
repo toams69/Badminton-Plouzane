@@ -4,7 +4,7 @@ import {
   GET_CONTESTS, GET_CONTESTS_SUCCESS, GET_CONTESTS_FAILURE,
   DELETE_CONTESTS, DELETE_CONTESTS_SUCCESS, DELETE_CONTESTS_FAILURE,
   GET_CONTEST
-} from '../actions/contests';
+} from '_actions/contests';
 
 import uuid from 'uuid';
 import _ from 'lodash'
