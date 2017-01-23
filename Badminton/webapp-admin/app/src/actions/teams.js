@@ -14,7 +14,7 @@ export const GET_TEAMS_FAILURE = 'GET_TEAMS_FAILURE';
 
 export const GET_TEAM = 'GET_TEAM';
 
-const ROOT_URL = 'http://localhost:3002/api';
+const ROOT_URL = 'http://'+window.location.hostname+'/api';
 
 export function getAllTeams() {
   const request = axios.get(`${ROOT_URL}/teams`);

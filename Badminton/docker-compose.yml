@@ -117,23 +117,23 @@ services:
       - DB_USERNAME=admin
       - DB_PASSWORD=admin
 
-  # nginx:
-  #   image: nginx:1.10.1
-  #   container_name: nginx
-  #   depends_on:
-  #     # - webapp
-  #     # - webapp-prod
-  #     - rest-api
-  #     - webapp-admin
-  #   volumes:
-  #     - ./nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
-  #   ports:
-  #     - "80:80"
-  #   environment:
-  #     - NGINX_HOST=nginx
-  #     - NGINX_PORT=80
-  #     #- WEBAPP_DEV=http://webapp:3000/
-  #     - WEBAPP_ADMIN=http://webapp-admin:3005/
-  #     #- WEBAPP_PROD=http://webapp-prod:3003/
-  #     - API_SERVER=http://rest-api:3002/api
-  #   command: /bin/bash -c "envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
+  nginx:
+    image: nginx:1.10.1
+    container_name: nginx
+    depends_on:
+      - webapp
+      # - webapp-prod
+      - rest-api
+      - webapp-admin
+    volumes:
+      - ./nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
+    ports:
+      - "80:80"
+    environment:
+      - NGINX_HOST=nginx
+      - NGINX_PORT=80
+      - WEBAPP_DEV=http://webapp:2104/
+      - WEBAPP_ADMIN=http://webapp-admin:3005/
+      #- WEBAPP_PROD=http://webapp-prod:3003/
+      - API_SERVER=http://rest-api:3002/api
+    command: /bin/bash -c "envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"

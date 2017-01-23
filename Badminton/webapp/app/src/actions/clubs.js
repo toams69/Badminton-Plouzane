@@ -5,7 +5,7 @@ export const GET_CLUBS_SUCCESS = 'GET_CLUBS_SUCCESS';
 export const GET_CLUBS_FAILURE = 'GET_CLUBS_FAILURE';
 export const GET_CLUB = 'GET_CLUB';
 
-const ROOT_URL = 'http://'+window.location.hostname+':3002/api';
+const ROOT_URL = 'http://'+window.location.hostname+'/api';
 
 export function getAllClubs() {
   const request = axios.get(`${ROOT_URL}/clubs?subresources=*`);

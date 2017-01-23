@@ -8,7 +8,7 @@ export const GET_PLAYER = 'GET_PLAYER';
 export const GET_PLAYER_SUCCESS = 'GET_PLAYER_SUCCESS';
 export const GET_PLAYER_FAILURE = 'GET_PLAYER_FAILURE';
 
-const ROOT_URL = 'http://'+window.location.hostname+':3002/api';
+const ROOT_URL = 'http://'+window.location.hostname+'/api';
 
 export function getAllPlayers() {
   const request = axios.get(`${ROOT_URL}/players`);

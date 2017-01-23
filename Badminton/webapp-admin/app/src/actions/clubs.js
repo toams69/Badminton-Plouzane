@@ -23,7 +23,7 @@ export const EDIT_CLUB_FAILURE = 'EDIT_CLUB_FAILURE';
 
 export const GET_CLUB = 'GET_CLUB';
 
-const ROOT_URL = 'http://localhost:3002/api';
+const ROOT_URL = 'http://'+window.location.hostname+'/api';
 
 export function getAllClubs() {
   const request = axios.get(`${ROOT_URL}/clubs`);

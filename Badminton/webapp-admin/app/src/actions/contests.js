@@ -23,7 +23,7 @@ export const EDIT_CONTEST_FAILURE = 'EDIT_CONTEST_FAILURE';
 
 export const GET_CONTEST = 'GET_CONTEST';
 
-const ROOT_URL = 'http://localhost:3002/api';
+const ROOT_URL = 'http://'+window.location.hostname+'/api';
 
 export function getAllContests() {
   const request = axios.get(`${ROOT_URL}/contests`);

@@ -24,7 +24,7 @@ export const EDIT_PLAYER_FAILURE = 'EDIT_PLAYER_FAILURE';
 
 export const GET_PLAYER = 'GET_PLAYER';
 
-const ROOT_URL = 'http://localhost:3002/api';
+const ROOT_URL = 'http://'+window.location.hostname+'/api';
 
 export function getAllPlayers() {
   const request = axios.get(`${ROOT_URL}/players`);
